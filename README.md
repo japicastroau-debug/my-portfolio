@@ -21,7 +21,7 @@ To improve my skills in web development and create more amazing projects.
 
 ## 📬 Contact
 Feel free to reach out!
-- Email: your-email@example.com
+- Email: japi.castro.au@phinmaed.com.
 
 ## ⭐ Note
 Thank you for visiting my portfolio!
