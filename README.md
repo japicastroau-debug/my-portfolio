@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en">
+  <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,7 @@ header{
   background:#020617;
   position:sticky;
   top:0;
+  z-index:100;
 }
 
 .logo{
@@ -67,6 +68,7 @@ nav a:hover{color:#38bdf8;}
   border-radius:8px;
   text-decoration:none;
   font-weight:600;
+  transition:0.2s;
 }
 
 .btn:hover{transform:scale(1.05);}
@@ -122,8 +124,7 @@ footer{
 /* CALCULATOR */
 .overlay{
   position:fixed;
-  width:100%;
-  height:100%;
+  inset:0;
   background:rgba(0,0,0,0.6);
   display:none;
   z-index:999;
@@ -159,7 +160,7 @@ footer{
   gap:10px;
 }
 
-button{
+button.calc-btn{
   padding:12px;
   border:none;
   border-radius:5px;
@@ -169,6 +170,7 @@ button{
 .operator{background:#38bdf8;}
 .equal{background:#22c55e;}
 .clear{background:#ef4444;}
+.close{background:#334155;color:#fff;}
 </style></head><body><header>
   <div class="logo">Jayvee</div>
   <nav>
@@ -214,28 +216,28 @@ button{
   </div>
 </section><footer>
   <p>© 2026 Jayvee Portfolio</p>
-</footer><div class="overlay" onclick="closeCalc()"></div><div class="calculator" id="calc">
+</footer><!-- CALCULATOR --><div class="overlay" onclick="closeCalc()"></div><div class="calculator" id="calc">
   <input type="text" id="display" class="display" disabled>  <div class="buttons">
-    <button class="clear" onclick="clearDisplay()">C</button>
-    <button class="operator" onclick="append('/')">/</button>
-    <button class="operator" onclick="append('*')">*</button>
-    <button onclick="closeCalc()">X</button><button onclick="append('7')">7</button>
-<button onclick="append('8')">8</button>
-<button onclick="append('9')">9</button>
-<button class="operator" onclick="append('-')">-</button>
+    <button class="calc-btn clear" onclick="clearDisplay()">C</button>
+    <button class="calc-btn operator" onclick="append('/')">/</button>
+    <button class="calc-btn operator" onclick="append('*')">*</button>
+    <button class="calc-btn close" onclick="closeCalc()">X</button><button class="calc-btn" onclick="append('7')">7</button>
+<button class="calc-btn" onclick="append('8')">8</button>
+<button class="calc-btn" onclick="append('9')">9</button>
+<button class="calc-btn operator" onclick="append('-')">-</button>
 
-<button onclick="append('4')">4</button>
-<button onclick="append('5')">5</button>
-<button onclick="append('6')">6</button>
-<button class="operator" onclick="append('+')">+</button>
+<button class="calc-btn" onclick="append('4')">4</button>
+<button class="calc-btn" onclick="append('5')">5</button>
+<button class="calc-btn" onclick="append('6')">6</button>
+<button class="calc-btn operator" onclick="append('+')">+</button>
 
-<button onclick="append('1')">1</button>
-<button onclick="append('2')">2</button>
-<button onclick="append('3')">3</button>
+<button class="calc-btn" onclick="append('1')">1</button>
+<button class="calc-btn" onclick="append('2')">2</button>
+<button class="calc-btn" onclick="append('3')">3</button>
+<button class="calc-btn equal" onclick="calculate()">=</button>
 
-<button onclick="append('0')">0</button>
-<button onclick="append('.')">.</button>
-<button class="equal" onclick="calculate()">=</button>
+<button class="calc-btn" onclick="append('0')">0</button>
+<button class="calc-btn" onclick="append('.')">.</button>
 
   </div>
 </div><script>
